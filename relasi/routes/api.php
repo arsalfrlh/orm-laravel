@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BeliApiController;
 use App\Http\Controllers\RelasiApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -12,4 +13,10 @@ Route::prefix('/relasi')->group(function(){ //prefix contoh pemanggilan "http://
     Route::get('/barang',[RelasiApiController::class,'barang']);
     Route::get('/user',[RelasiApiController::class,'user']);
     Route::get('/beli',[RelasiApiController::class,'beli']);
+});
+
+Route::prefix('/orm')->group(function(){
+    Route::get('/beli',[BeliApiController::class,'beli']);
+    Route::get('/hotel',[BeliApiController::class,'hotel']);
+    Route::get('/search',[BeliApiController::class,'search']);
 });
